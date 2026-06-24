@@ -1,0 +1,43 @@
+.txt__1 {
+  @apply text-[40px] leading-[130%] tracking-[-1px] font-extrabold;
+}
+
+.txt__2 {
+  @apply text-[32px] leading-[130%] tracking-[-0.5px] font-extrabold;
+}
+
+.txt__3 {
+  @apply text-[28px] leading-[130%] tracking-[-0.5px] font-bold;
+}
+
+.txt__4 {
+  @apply text-[24px] leading-[130%] tracking-[-0.5px] font-semibold;
+}
+
+.txt__5 {
+  @apply text-[20px] leading-[130%] tracking-[-0.5px] font-semibold;
+}
+
+.txt__6 {
+  @apply text-[18px] leading-[150%] tracking-[-0.5px] font-medium;
+}
+
+.txt__7 {
+  @apply text-[18px] leading-[150%] tracking-[-0.2px] font-normal;
+}
+
+.txt__7_semibold {
+  @apply text-[18px] leading-[150%] tracking-[-0.2px] font-semibold;
+}
+
+.txt__8 {
+  @apply text-[16px] leading-[130%] tracking-[-0.2px] font-normal;
+}
+
+.txt__8_italic {
+  @apply text-[16px] leading-[130%] tracking-[-0.2px] font-normal italic;
+}
+
+.txt__9 {
+  @apply font-mono text-[16px] leading-[145%] tracking-[-0.4px] font-normal;
+}
