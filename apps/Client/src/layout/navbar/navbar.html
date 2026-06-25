@@ -1,0 +1,22 @@
+<div
+  class="root mt-[16px] mx-[16px] border-2 flex items-center justify-between p-[6px] rounded-[10px]"
+  [ngClass]="useTheme.ifLight('bg-neutral__0', 'bg-neutral__800 text-neutral__0')"
+>
+  <div class="root__left w-[40px] h-[40px]">
+    <app-img-loading src="/images/profile.png" />
+  </div>
+
+  <div class="root__right flex items-center justify-center gap-[20px]">
+    <button class="p-[10px]">
+      <div class="root__svg">
+        <ng-container *ngComponentOutlet="SvgBurger" />
+      </div>
+    </button>
+
+    <button (click)="useTheme.toggle()" class="border-2 p-[10px] rounded-[10px]">
+      <div class="root__svg">
+        <ng-container *ngComponentOutlet="SvgTheme()" />
+      </div>
+    </button>
+  </div>
+</div>

@@ -1,17 +1,14 @@
 
-import { Nullable } from '@/common/types/general';
+
 import { ChangeDetectionStrategy, Component, input, InputSignal } from '@angular/core';
 
 @Component({
-  selector: 'app-svg-fill-theme-dark',
+  selector: 'app-svg-advanced-theme-dark',
   templateUrl: `./theme-dark.html`,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SvgFillThemeDark {
+export class SvgAdvThemeDark {
     width: InputSignal<'auto' | string> = input('100%');
     height: InputSignal<'auto' | string> = input('100%');
-    
-    fill: InputSignal<string> = input<string>('currentColor');
-    stroke: InputSignal<Nullable<string>> = input<Nullable<string>>(null);
     
 }
