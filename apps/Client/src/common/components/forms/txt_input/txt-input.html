@@ -1,6 +1,6 @@
-<div class="root">
+<div class="root" [ngClass]="useTheme.ifLight('text-neutral__700', 'text-neutral__0')">
   <div class="root__label">
-    <span>{{ field().label }}</span>
+    <span class="txt__7">{{ field().label }}</span>
   </div>
 
   <div class="root__field">
@@ -10,6 +10,7 @@
       [formControl]="ctrl()"
       [placeholder]="field().label + '...'"
       [autocomplete]="'off'"
+      [ngClass]="useTheme.ifLight('bg-neutral__0', 'bg-neutral__900')"
     />
 
     <div class="field__err">
