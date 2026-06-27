@@ -30,5 +30,31 @@
     </span>
   </div>
 
-  <div class="mt-[24px]"></div>
+  <div class="mt-[24px] flex justify-start items-center gap-[12px]">
+    @for (item of HomepageUiFct.Svgs; track item.id) {
+      <div
+        class="w-[40px] h-[40px] flex justify-center items-center border-2 rounded-[5px]"
+        [ngClass]="useThem.ifLight('border-neutral__200', 'border-neutral__700')"
+      >
+        <div
+          class="w-[20px] h-[20px]"
+          [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
+        >
+          <ng-container *ngComponentOutlet="item.Svg" />
+        </div>
+      </div>
+    }
+  </div>
+
+  <hr
+    class="h-[1px] w-full my-[32px]"
+    [ngClass]="useThem.ifLight('bg-neutral-200', 'bg-neutral-700')"
+  />
+
+  <div class="relative max-w-fit">
+    <span class="txt__2" [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
+      >Latest Articles</span
+    >
+    <div class="absolute bottom-1 left-[105%] bg-blue__500 w-[40px] h-[3px]"></div>
+  </div>
 </div>
