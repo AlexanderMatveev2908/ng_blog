@@ -35,6 +35,10 @@ button {
   appearance: none;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 button:enabled:hover {
   @apply cursor-pointer;
 }
