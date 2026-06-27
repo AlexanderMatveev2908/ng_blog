@@ -1,3 +1,4 @@
+import { BlogPage } from '@/pages/blog_page/blog-page';
 import { HomePage } from '@/pages/home_page/home-page';
 import { NotFoundPage } from '@/pages/not_found_page/not-found-page';
 import { NoticePage } from '@/pages/notice_page/notice-page';
@@ -7,6 +8,10 @@ export const routes: Routes = [
   {
     path: '',
     component: HomePage,
+  },
+  {
+    path: 'blog',
+    component: BlogPage,
   },
   {
     path: 'notice',

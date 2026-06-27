@@ -54,3 +54,7 @@ button:disabled:hover {
 a:hover {
   @apply cursor-pointer;
 }
+
+.app__page {
+  @apply pt-[100px] px-[32px] min-w-full min-h-screen;
+}

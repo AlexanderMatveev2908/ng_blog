@@ -47,6 +47,7 @@
     >
       @for (item of NavbarUiFct.links; track item.id) {
         <a
+          (click)="toggleDrop()"
           [routerLink]="item.path"
           class="border-b-2 py-[12px] last:border-b-0 mx-[12px]"
           [ngClass]="useTheme.ifLight('border-neutral__200', 'border-neutral__700')"

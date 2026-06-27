@@ -1,0 +1,37 @@
+<div class="root app__page" [ngClass]="useTheme.ifLight('bg-neutral__0', 'bg-neutral__900')">
+  <div class="relative max-w-fit">
+    <span class="txt__2" [ngClass]="useTheme.ifLight('text-neutral__700', 'text-neutral__0')"
+      >My Articles</span
+    >
+    <div class="absolute bottom-1 left-[105%] bg-blue__500 w-[40px] h-[3px]"></div>
+  </div>
+
+  <span class="mt-[6px]" [ngClass]="useTheme.ifLight('text-neutral__600', 'text-neutral__400')"
+    >Below are all my recent blog posts. Click on any title to read the full article.</span
+  >
+
+  @for (item of BlogsUiFct.data; track item.id) {
+    <div class="flex flex-col">
+      <hr
+        class="h-[1px] w-full my-[20px]"
+        [ngClass]="useTheme.ifLight('bg-neutral-200', 'bg-neutral-700')"
+      />
+
+      <span class="txt__5" [ngClass]="useTheme.ifLight('text-neutral__700', 'text-neutral__0')">{{
+        item.title
+      }}</span>
+
+      <span
+        class="txt__8 mt-[8px]"
+        [ngClass]="useTheme.ifLight('text-neutral__700', 'text-neutral__400')"
+        >{{ formatDate(item.publishedAt) }}</span
+      >
+
+      <span
+        class="txt__8 mt-[8px]"
+        [ngClass]="useTheme.ifLight('text-neutral__700', 'text-neutral__400')"
+        >{{ item.description }}</span
+      >
+    </div>
+  }
+</div>
