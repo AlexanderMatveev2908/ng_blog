@@ -1,22 +1,61 @@
 <div
-  class="root mt-[16px] mx-[16px] border-2 flex items-center justify-between p-[6px] rounded-[10px]"
-  [ngClass]="useTheme.ifLight('bg-neutral__0', 'bg-neutral__800 text-neutral__0')"
+  class="root pt-[16px] px-[16px] relative"
+  [ngClass]="useTheme.ifLight('bg-neutral__0', 'bg-neutral__900')"
 >
-  <div class="root__left w-[40px] h-[40px]">
-    <app-img-loading src="/images/profile.png" />
+  <div
+    class="border-2 flex items-center justify-between p-[6px] rounded-[10px]"
+    [ngClass]="
+      useTheme.ifLight(
+        'bg-neutral__0 border-neutral__200',
+        'bg-neutral__900 text-neutral__0 border-neutral__700'
+      )
+    "
+  >
+    <div class="w-[40px] h-[40px]">
+      <app-img-loading src="/images/profile.png" />
+    </div>
+
+    <div class="flex items-center justify-center gap-[20px]">
+      <button #burgerRef (click)="toggleDrop()" class="p-[10px]">
+        <div class="root__svg">
+          <ng-container *ngComponentOutlet="SvgBurger" />
+        </div>
+      </button>
+
+      <button
+        (click)="useTheme.toggle()"
+        class="border-2 p-[10px] rounded-[10px]"
+        [ngClass]="useTheme.ifLight('border-neutral__200', 'border-neutral__700')"
+      >
+        <div class="root__svg">
+          <ng-container *ngComponentOutlet="SvgTheme()" />
+        </div>
+      </button>
+    </div>
   </div>
 
-  <div class="root__right flex items-center justify-center gap-[20px]">
-    <button class="p-[10px]">
-      <div class="root__svg">
-        <ng-container *ngComponentOutlet="SvgBurger" />
-      </div>
-    </button>
-
-    <button (click)="useTheme.toggle()" class="border-2 p-[10px] rounded-[10px]">
-      <div class="root__svg">
-        <ng-container *ngComponentOutlet="SvgTheme()" />
-      </div>
-    </button>
-  </div>
+  @if (isDrop()) {
+    <div
+      #dropRef
+      class="absolute top-[120%] mx-auto w-[calc(100%-32px)] rounded-[10px] flex flex-col border-2 z-50 gap-[13px]"
+      [ngClass]="
+        useTheme.ifLight(
+          'border-neutral__200 bg-neutral__0',
+          'border-neutral__700 bg-neutral__900 text-neutral__0'
+        )
+      "
+    >
+      @for (item of NavbarUiFct.links; track item.id) {
+        <a
+          [routerLink]="item.path"
+          class="border-b-2 py-[12px] last:border-b-0 mx-[12px]"
+          [ngClass]="useTheme.ifLight('border-neutral__200', 'border-neutral__700')"
+        >
+          <span [ngClass]="getFont(item.path)">
+            {{ item.label }}
+          </span>
+        </a>
+      }
+    </div>
+  }
 </div>
