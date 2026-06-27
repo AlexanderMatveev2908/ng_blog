@@ -1,5 +1,5 @@
 <div
-  class="root pt-[16px] px-[16px] relative"
+  class="root pt-[16px] px-[16px] fixed top-0 left-0 w-full"
   [ngClass]="useTheme.ifLight('bg-neutral__0', 'bg-neutral__900')"
 >
   <div
@@ -37,7 +37,7 @@
   @if (isDrop()) {
     <div
       #dropRef
-      class="absolute top-[120%] mx-auto w-[calc(100%-32px)] rounded-[10px] flex flex-col border-2 z-50"
+      class="absolute top-[120%] mx-auto w-[calc(100%-32px)] rounded-[10px] flex flex-col border-2"
       [ngClass]="
         useTheme.ifLight(
           'border-neutral__200 bg-neutral__0',

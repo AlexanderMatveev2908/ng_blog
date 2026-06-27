@@ -1,1 +1,87 @@
-<div class="root" [ngClass]="useThem.ifLight('bg-neutral__0', 'bg-neutral__900')"></div>
+<div
+  class="root pt-[100px] px-[32px]"
+  [ngClass]="useThem.ifLight('bg-neutral__0', 'bg-neutral__900')"
+>
+  <div class="relative max-w-fit">
+    <span
+      [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
+      class="txt__2 relative z-20"
+    >
+      Hi, I’m Paulina 👋</span
+    >
+    <div class="absolute z-10 bottom-0 left-0 w-full bg-blue__500 h-[15px]"></div>
+  </div>
+
+  <div
+    class="mt-[24px] flex flex-col gap-[24px] txt__7"
+    [ngClass]="useThem.ifLight('text-neutral__600', 'text-neutral__400')"
+  >
+    <span>
+      I’m on a journey to become a front-end web developer. I love building little projects, trying
+      out new coding techniques, and sharing what I learn along the way. When I’m not at my desk,
+      you’ll find me reading, hiking through the mountains, or challenging myself on rock-climbing
+      walls.
+    </span>
+
+    <span>
+      I started this blog to document my progress, keep myself accountable, and hopefully inspire
+      anyone else who’s learning to code. Welcome to my corner of the internet, and thanks for
+      stopping by!
+    </span>
+  </div>
+
+  <div class="mt-[24px] flex justify-start items-center gap-[12px]">
+    @for (item of HomepageUiFct.Svgs; track item.id) {
+      <div
+        class="w-[40px] h-[40px] flex justify-center items-center border-2 rounded-[5px]"
+        [ngClass]="useThem.ifLight('border-neutral__200', 'border-neutral__700')"
+      >
+        <div
+          class="w-[20px] h-[20px]"
+          [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
+        >
+          <ng-container *ngComponentOutlet="item.Svg" />
+        </div>
+      </div>
+    }
+  </div>
+
+  <hr
+    class="h-[1px] w-full my-[32px]"
+    [ngClass]="useThem.ifLight('bg-neutral-200', 'bg-neutral-700')"
+  />
+
+  <div class="relative max-w-fit">
+    <span class="txt__2" [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
+      >Latest Articles</span
+    >
+    <div class="absolute bottom-1 left-[105%] bg-blue__500 w-[40px] h-[3px]"></div>
+
+    <div class="flex flex-col gap-[24px] mt-[32px]">
+      @for (item of BlogsUiFct.data.slice(0, 5); track item.id) {
+        <div class="flex flex-col gap-[8px]">
+          <span
+            class="txt__5"
+            [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
+            >{{ item.title }}</span
+          >
+
+          <span
+            class="txt__8"
+            [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
+            >{{ formatDate(item.publishedAt) }}</span
+          >
+        </div>
+      }
+    </div>
+
+    <div class="relative max-w-fit mt-[32px]">
+      <a
+        [routerLink]="'/blog'"
+        class="txt__6 border-b-[3px] border-blue__500"
+        [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
+        >View all articles</a
+      >
+    </div>
+  </div>
+</div>
