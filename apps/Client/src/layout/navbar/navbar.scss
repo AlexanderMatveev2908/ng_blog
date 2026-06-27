@@ -1,0 +1,7 @@
+@use 'exports/mix.scss' as mix;
+
+.root {
+  .root__svg {
+    @include mix.of_size(20px);
+  }
+}
