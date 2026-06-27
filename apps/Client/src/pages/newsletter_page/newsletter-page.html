@@ -1,0 +1,36 @@
+<div class="root app__page" [ngClass]="useTheme.ifLight('bg-neutral__0', 'bg-neutral__900')">
+  <div class="flex flex-col gap-[20px]">
+    <span class="txt__2" [ngClass]="useTheme.ifLight('text-neutral__700', 'text-neutral__0')"
+      >Newsletter</span
+    >
+
+    <span class="txt__7" [ngClass]="useTheme.ifLight('text-neutral__700', 'text-neutral__400')"
+      >Want to stay updated on my latest articles, coding tutorials, and personal adventures? Sign
+      up for my newsletter! It’s a simple way to keep track of new posts and occasional coding tips
+      I discover. Just drop your email in the sign-up box, and I’ll send you updates whenever
+      there’s something new to share.</span
+    >
+
+    <span class="txt__5" [ngClass]="useTheme.ifLight('text-neutral__700', 'text-neutral__0')"
+      >I’d love to have you along for the ride and also hear about your own journey!</span
+    >
+  </div>
+
+  <div class="mt-[20px]">
+    <form (ngSubmit)="submit()" [formGroup]="form" class="flex flex-col">
+      <app-txt-input [ctrl]="getCtrl('email')" [field]="NewsletterUiFct.emailField" />
+
+      <button
+        class="bg-blue__700 px-[24px] py-[12px] rounded-[10px] mt-[16px] hover:opacity-80 active:ring-2 max-w-fit"
+      >
+        Stay updated
+      </button>
+
+      <span
+        class="txt__8 mt-[10px]"
+        [ngClass]="useTheme.ifLight('text-neutral-700', 'text-neutral-400')"
+        >Unsubscribe anytime. No spam, I promise 🙂</span
+      >
+    </form>
+  </div>
+</div>
