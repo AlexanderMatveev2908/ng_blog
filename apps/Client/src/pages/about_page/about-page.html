@@ -1,0 +1,68 @@
+<div class="root app__page" [ngClass]="useTheme.ifLight('bg-neutral__0', 'bg-neutral__900')">
+  <div class="relative max-w-fit">
+    <span
+      [ngClass]="useTheme.ifLight('text-neutral__700', 'text-neutral__0')"
+      class="txt__2 relative z-20"
+    >
+      About</span
+    >
+    <div class="absolute z-10 bottom-0 left-0 w-full bg-blue__500 h-[15px]"></div>
+  </div>
+
+  <div
+    class="flex flex-col gap-[20px] mt-[20px]"
+    [ngClass]="useTheme.ifLight('text-neutral__700', 'text-neutral__400')"
+  >
+    <span
+      >Hi, I’m Paulina! Ever since I can remember, I’ve had a passion for creativity and
+      problem-solving. That’s what led me to the world of front-end web development. There’s
+      something magical about seeing an idea come to life in the browser—whether it’s a simple
+      layout experiment or a complex interface for a bigger project.</span
+    >
+
+    <span
+      >When I’m not coding, I love getting lost in a good book. My taste is pretty eclectic: I’ll
+      happily read everything from fantasy novels to biographies of tech pioneers. Reading helps me
+      unwind and often sparks new ideas for my coding projects.</span
+    >
+
+    <span
+      >Another big passion of mine is the great outdoors. Hiking allows me to disconnect from the
+      digital world and reconnect with nature. I love challenging hikes with rewarding views at the
+      top. And if I’m not on the trails, you might catch me rock climbing. The combination of mental
+      focus and physical endurance is a perfect parallel to tackling tough coding challenges!</span
+    >
+  </div>
+
+  <div class="mt-[20px]" [ngClass]="useTheme.ifLight('text-neutral__700', 'text-neutral__400')">
+    <span class="txt__7">Some of my favorite books:</span>
+
+    <div class="mt-[20px]">
+      @for (item of AboutUiFct.data; track item.id) {
+        <div>
+          <span class="txt__7_semibold">• {{ item.underlined }} </span>
+
+          <span class="txt__7">{{ item.txt }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div
+    class="mt-[20px] flex flex-col items-center justify-center"
+    [ngClass]="useTheme.ifLight('text-neutral__700', 'text-neutral__400')"
+  >
+    <span class="txt__7"
+      >I absolutely love my workspace as a place that inspires me to do my best work, so I thought
+      I’d share it with you:</span
+    >
+    <div class="w-[360px] h-[200px] mt-[25px]">
+      <app-img-loading src="/images/workspace.png" />
+    </div>
+
+    <span class="txt__7 mt-[20px]"
+      >I hope this blog not only documents my growth but also helps others see that coding can be
+      for everyone. Thanks for joining me on this journey!</span
+    >
+  </div>
+</div>
