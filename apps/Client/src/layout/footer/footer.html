@@ -1,0 +1,23 @@
+<div
+  class="root pt-[32px] px-[32px]"
+  [ngClass]="useTheme.ifLight('bg-neutral__0', 'bg-neutral__900')"
+>
+  <hr class="h-[1px] w-full" [ngClass]="useTheme.ifLight('bg-neutral-200', 'bg-neutral-700')" />
+
+  <div class="flex justify-between items-center mt-[18px] pb-[18px]">
+    <span class="txt__8" [ngClass]="useTheme.ifLight('text-neutral__700', 'text-neutral__0')"
+      >Made with ❤️ and ☕️</span
+    >
+
+    <div class="flex justify-center items-center gap-[18px]">
+      @for (item of FooterUiFct.Svgs; track item.id) {
+        <div
+          class="w-[20px] h-[20px]"
+          [ngClass]="useTheme.ifLight('text-neutral__700', 'text-neutral__0')"
+        >
+          <ng-container *ngComponentOutlet="item.Svg" />
+        </div>
+      }
+    </div>
+  </div>
+</div>

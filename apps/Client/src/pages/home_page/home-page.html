@@ -56,32 +56,28 @@
       >Latest Articles</span
     >
     <div class="absolute bottom-1 left-[105%] bg-blue__500 w-[40px] h-[3px]"></div>
+  </div>
 
-    <div class="flex flex-col gap-[24px] mt-[32px]">
-      @for (item of BlogsUiFct.data.slice(0, 5); track item.id) {
-        <div class="flex flex-col gap-[8px]">
-          <span
-            class="txt__5"
-            [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
-            >{{ item.title }}</span
-          >
+  <div class="flex flex-col gap-[24px] mt-[32px]">
+    @for (item of BlogsUiFct.data.slice(0, 5); track item.id) {
+      <div class="flex flex-col gap-[8px]">
+        <span class="txt__5" [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')">{{
+          item.title
+        }}</span>
 
-          <span
-            class="txt__8"
-            [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
-            >{{ formatDate(item.publishedAt) }}</span
-          >
-        </div>
-      }
-    </div>
+        <span class="txt__8" [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')">{{
+          formatDate(item.publishedAt)
+        }}</span>
+      </div>
+    }
+  </div>
 
-    <div class="relative max-w-fit mt-[32px]">
-      <a
-        [routerLink]="'/blog'"
-        class="txt__6 border-b-[3px] border-blue__500"
-        [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
-        >View all articles</a
-      >
-    </div>
+  <div class="relative max-w-fit mt-[32px]">
+    <a
+      [routerLink]="'/blog'"
+      class="txt__6 border-b-[3px] border-blue__500"
+      [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
+      >View all articles</a
+    >
   </div>
 </div>
