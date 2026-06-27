@@ -1,1 +1,34 @@
-<div class="root" [ngClass]="useThem.ifLight('bg-neutral__0', 'bg-neutral__900')"></div>
+<div
+  class="root pt-[100px] px-[32px]"
+  [ngClass]="useThem.ifLight('bg-neutral__0', 'bg-neutral__900')"
+>
+  <div class="relative max-w-fit">
+    <span
+      [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
+      class="txt__2 relative z-20"
+    >
+      Hi, I’m Paulina 👋</span
+    >
+    <div class="absolute z-10 bottom-0 left-0 w-full bg-blue__500 h-[15px]"></div>
+  </div>
+
+  <div
+    class="mt-[24px] flex flex-col gap-[24px] txt__7"
+    [ngClass]="useThem.ifLight('text-neutral__600', 'text-neutral__400')"
+  >
+    <span>
+      I’m on a journey to become a front-end web developer. I love building little projects, trying
+      out new coding techniques, and sharing what I learn along the way. When I’m not at my desk,
+      you’ll find me reading, hiking through the mountains, or challenging myself on rock-climbing
+      walls.
+    </span>
+
+    <span>
+      I started this blog to document my progress, keep myself accountable, and hopefully inspire
+      anyone else who’s learning to code. Welcome to my corner of the internet, and thanks for
+      stopping by!
+    </span>
+  </div>
+
+  <div class="mt-[24px]"></div>
+</div>
