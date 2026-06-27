@@ -76,7 +76,12 @@
     </div>
 
     <div class="relative max-w-fit mt-[32px]">
-      <a [routerLink]="'/blog'" class="txt__6 border-b-[3px] border-blue__500">View all articles</a>
+      <a
+        [routerLink]="'/blog'"
+        class="txt__6 border-b-[3px] border-blue__500"
+        [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
+        >View all articles</a
+      >
     </div>
   </div>
 </div>
