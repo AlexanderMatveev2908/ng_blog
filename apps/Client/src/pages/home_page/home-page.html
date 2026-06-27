@@ -1,7 +1,4 @@
-<div
-  class="root pt-[100px] px-[32px]"
-  [ngClass]="useThem.ifLight('bg-neutral__0', 'bg-neutral__900')"
->
+<div class="root app__page" [ngClass]="useThem.ifLight('bg-neutral__0', 'bg-neutral__900')">
   <div class="relative max-w-fit">
     <span
       [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')"
@@ -65,9 +62,11 @@
           item.title
         }}</span>
 
-        <span class="txt__8" [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__0')">{{
-          formatDate(item.publishedAt)
-        }}</span>
+        <span
+          class="txt__8"
+          [ngClass]="useThem.ifLight('text-neutral__700', 'text-neutral__400')"
+          >{{ formatDate(item.publishedAt) }}</span
+        >
       </div>
     }
   </div>
